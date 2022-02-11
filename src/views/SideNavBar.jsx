@@ -1,35 +1,62 @@
-import * as React from 'react';
-import {Drawer,List,ListItem,ListItemText, Divider, Toolbar} from '@material-ui/core';
+import * as React from "react";
+import {useNavigate} from 'react-router-dom'
+import "./sideNavBar.css";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  Toolbar,
+} from "@material-ui/core";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   drawer: {
-    width: '200px'
-  }
-})
+    width: "200px",
+  },
+});
 
 
-
-
-export default function PermanentDrawerLeft() {
-  const classes = useStyles()
-  const pages = ['Page 1', 'Page 2', 'Page 3']
+function PermanentDrawerLeft() {
+  const navigate = useNavigate()
+  const classes = useStyles();
+  
+  const pages = [
+    {
+      text: "Page 1",
+      onClick: () => navigate('/page1')
+    },
+    {
+      text: "Page 2",
+      onClick: () => navigate('/page2')
+    },
+    {
+      text: "Page 3",
+      onClick: () => navigate('/page3')
+    },
+  ];
   return (
-      <Drawer
-        variant="permanent"
-        anchor="left"
-        className={classes.drawer}
-      >
+    <div className="main">
+      <Drawer variant="permanent" anchor="left" className={classes.drawer}>
         <Toolbar />
         <Divider />
         <List>
-          {pages.map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {pages.map((page, index) => {
+            const { text, onClick } = page;
+            return (
+              <ListItem button key={text} onClick={onClick}>
+                <ListItemText primary={text} />
+              </ListItem>
+            );
+          })}
         </List>
       </Drawer>
+    </div>
   );
 }
+
+export default PermanentDrawerLeft
+
+

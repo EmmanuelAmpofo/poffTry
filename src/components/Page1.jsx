@@ -12,7 +12,7 @@ function Page1() {
   const classes = useStyles()
   return <div className={classes.container}>
     <SideNavBar />
-    <div>dskgkfhdkjsh;jghufd</div>
+    <div><h1>Page1</h1></div>
   </div>;
 }
 

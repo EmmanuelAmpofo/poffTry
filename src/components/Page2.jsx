@@ -13,7 +13,7 @@ function Page2() {
   return (
     <div className={classes.container}>
       <SideNavBar />
-      zdbkgkbkvbucxb
+      <div><h1>Page2</h1></div>
     </div>
   );
 }

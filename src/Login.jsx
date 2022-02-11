@@ -4,16 +4,13 @@ import {useNavigate} from 'react-router-dom'
 import "./loginStyle.css";
 
 function Login() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigation = useNavigate()
 
   //Handle changes in input fields
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -29,6 +26,8 @@ function Login() {
     return valid.test(String(email).toLowerCase())
   };
 
+
+   
 //Check password length
   const validatePassword = (passwd, minLength) => {
     const passwordLength = passwd.length > minLength;
@@ -38,9 +37,8 @@ function Login() {
     e.preventDefault()
     const validEmail = validateEmail(email)
     const validPassword = validatePassword(password,8)
-    if(validEmail && validPassword && name.trim() !== ''){
+    if(validEmail && validPassword){
       navigation('/page1')
-      setName('')
       setEmail('')
       setPassword('')
     }
@@ -51,13 +49,6 @@ function Login() {
   return (
     <div className="main">
       <form action="" className="formLogin" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={name}
-          onChange={handleNameChange}
-          required
-        />
         <input
           type="email"
           placeholder="Email"

@@ -12,7 +12,7 @@ function Page3() {
   const classes = useStyles()
   return <div className={classes.container}>
     <SideBarNav />
-    ,slghjfghouhxlu
+    <div><h1>Page3</h1></div>
   </div>;
 }
 
