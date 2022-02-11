@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import {ADD_TODO_REQUEST} from "../../redux/toDo/toDoSlice"
 import './todoInput.css'
 
 function TodoInput() {
     let [item, setItem] = useState()
+	const dispatch = useDispatch()
 
     const handleChange = (e) => {
         setItem(e.target.value)
@@ -18,6 +21,15 @@ function TodoInput() {
                         placeholder='Type items .....'
 					/>
 					<button
+					onClick={() => {
+						dispatch(
+							ADD_TODO_REQUEST({
+								id: new Date().toISOString(),
+								name: item,
+							})
+						);
+						setItem("");
+					}}
 						className="addBtn">
 						Add 
 					</button>
