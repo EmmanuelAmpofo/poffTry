@@ -6,6 +6,13 @@ import Page3 from './views/Page3'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+  container: {
+    display: 'flex'
+  }
+})
 
 
 function App() {
