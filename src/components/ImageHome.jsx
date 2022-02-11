@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import './ImageHome.css'
 
 const useStyles = makeStyles({
     container: {
@@ -28,7 +29,6 @@ function ImageHome({getSearchTerm}) {
 
   return (
     <div className={classes.container}>
-    {/* <SideNavBar /> */}
     <div className="heading">
         Image Gallery 
     </div>
@@ -40,7 +40,7 @@ function ImageHome({getSearchTerm}) {
           defaultValue={""}
           ref={searchRef}
           onChange={handleChange}
-          style={{width:'60%',margin:'auto',backgroundColor:'#f7f7f7', color:'white'}}
+          style={{width:'100%',margin:'auto',backgroundColor:'#f7f7f7', color:'black'}}
           InputProps={{
               endAdornment: (
                 <InputAdornment position="end">

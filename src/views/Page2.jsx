@@ -3,7 +3,8 @@ import SideNavBar from "./SideNavBar";
 import ImageHome from "../components/ImageHome";
 import { makeStyles } from '@material-ui/core/styles';
 import { createApi } from 'unsplash-js';
-import './page2.css'
+import '../components/page2.css'
+import './style.css'
 
 
 const useStyles = makeStyles({
@@ -13,19 +14,21 @@ const useStyles = makeStyles({
 	  gridAutoFlow:"dense",
 	  gap:"2rem",
 	  padding: "0 10% ",
-	  flexDirection:'column',
-    width: '80vw'
+	  flexDirection:'',
+    width: '80vw',
 	  
 	},
   container: {
     display: "flex",
+    // border: '1px solid',
+    // width: "100%"
   },
   })
 
 function Page2() {
   const classes = useStyles()
   const unsplash = createApi({
-		accessKey:'npO4KpmGScjfUYAsyUtWrSSCQenSBFGLCxLfEPCJ6uk',
+		accessKey:'N0Pr_YOzvuJcbhHs2qIijpNP-HpJWrfPIi_F6HvQJjw',
 	  })
     const [imageResult, setImageResult] = useState();
     const [searchTerm, setSearchTerm] = useState("");
@@ -39,8 +42,6 @@ function Page2() {
         query: search,
         page: 1,
         perPage: 20,
-        // color: 'green',
-        // orientation: 'portrait',
         })
         .then(
             (res)=>{
@@ -53,7 +54,7 @@ function Page2() {
   return (
     <div className={classes.container}>
       <SideNavBar />
-      <div><h1>Page2</h1>
+      <div className="style"><h1>Page2</h1>
       {!imageResult && <ImageHome getSearchTerm = {getSearchTerm}/>}
 		{ imageResult && 	(<div >
 								<div className = "result-text-header">Results for {searchTerm}</div>
