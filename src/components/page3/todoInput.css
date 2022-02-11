@@ -1,0 +1,35 @@
+.todoInput {
+  border: 1px solid;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+}
+.inputWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: 5rem auto;
+    margin-bottom: 2rem;
+
+}
+.textField {
+    min-width: 500px;
+    padding: 16px 0;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    outline: none;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 5px;
+    font-size: 15px;
+}
+.addBtn {
+    width: 5rem;
+    height: 3rem;
+    font-size: 15px;
+    cursor: pointer;
+}

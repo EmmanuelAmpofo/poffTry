@@ -1,8 +1,8 @@
 
 import Login from './Login'
-import Page1 from './components/Page1'
-import Page2 from './components/Page2'
-import Page3 from './components/Page3'
+import Page1 from './views/Page1'
+import Page2 from './views/Page2'
+import Page3 from './views/Page3'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import './App.css';

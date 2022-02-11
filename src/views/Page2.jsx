@@ -1,5 +1,5 @@
 import React from "react";
-import SideNavBar from "../views/SideNavBar";
+import SideNavBar from "./SideNavBar";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({

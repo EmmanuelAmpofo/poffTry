@@ -14,7 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   drawer: {
-    width: "200px",
+    width: "100px",
   },
 });
 

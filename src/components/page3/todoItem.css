@@ -1,0 +1,28 @@
+.todoItem {
+    background-color: #e2f3ea;
+    width: 50%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    border-radius: 0.7rem;
+}
+.todo-item-input {
+    flex: 0.7;
+}
+
+.todo-item-input input {
+    background-color: #e2f3ea;
+    width: 88%;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 1rem;
+}
+.actions {
+    flex: 0.3;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
