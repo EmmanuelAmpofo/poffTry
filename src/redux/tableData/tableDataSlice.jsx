@@ -20,15 +20,21 @@ export const loadTableData = createAsyncThunk(
     },
     reducers: {
         editTableData: (state, action) => {
-            const dataId = state.tableInfo.findIndex((row) => row.id === action.payload.id);
-            const newState = [...state.tableInfo];
-            newState[dataId] = {...state.tableInfo[dataId], userId: action.payload.userId, title: action.payload.title, body: action.payload.body, }
-            return newState;
+          state.tableInfo.map((x) => {
+            if(x.id === action.payload.id){
+              x.title = action.payload.title;
+              x.userId = action.payload.userId;
+              x.body = action.payload.body;
+              return x;
+            }
+            return x;
+          })
         },
         deleteTableData: (state, action) => {
-            return state.tableInfo.filter((row) => row.id !== action.payload.id)
+          const index = state.tableInfo.findIndex(x => x.id === action.payload.id)
+          state.tableInfo.splice(index, 1);
         },
-        addToTableData:(state, action) => {
+        addToTableData: (state, action) => {
             state.tableInfo.map((x) => {
                 x.action = "actions";
                 return x;
